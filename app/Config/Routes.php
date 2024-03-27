@@ -15,6 +15,7 @@ use app\Config\AuthFilter;
 //API routes
 $routes->group('API', function ($routes) {
     $routes->get("showMembers", "MemberControll::showMembers");
+    $routes->get("deleteMember", "MemberControll::deleteMember");
 });
 
 

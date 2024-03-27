@@ -53,4 +53,11 @@ class MemberControll extends BaseController
         echo $th;
       }
     }
+
+    public function deleteMember(){
+      $value = $this->request->getPostGet("val");
+      $member = $this->MEMBERS();
+      $member->where("id =  $value")->delete();
+      return $this->response->setJSON(["message"=>"success"]);
+    }
 }

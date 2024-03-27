@@ -3,6 +3,7 @@ import React,{useState, useEffect} from "react";
 
 const MemberTable = () =>{
 const [data, setData] = useState([]);
+const [success, isSuccess] = useState(false);
 
 useEffect(()=>{
     displayMember("");
@@ -24,10 +25,24 @@ const displayMember = async(searchValue) =>{
         }
 }
 
+const toDelete = async({mem_id}) =>{
+try {
+    const response = await axios.get(`/API/deleteMember?val=${mem_id}`);
+    console.log(response.data);
+    isSuccess(true);
+    displayMember("");
+} catch (error) {
+    
+}
+}
+
+
+
 
 console.log(data);
     return(
         <div className="bg-secondary rounded h-100 p-4">
+            {success==true && <Message/>}
                             <h6 className="mb-4 col-sm-6"><input type="search" onChange={showMembers} className="form-control" placeholder="Seach name here..." /></h6>
                             <table className="table table-striped">
                                 <thead>
@@ -46,7 +61,7 @@ console.log(data);
                                     <td>{column.fullname}</td>
                                     <td>{column.contact}</td>
                                     <td>{column.email}</td>
-                                    <td><a className="btn btn-sm btn-primary" href="">Delete</a></td>
+                                    <td><a className="btn btn-sm btn-primary" onClick={()=> toDelete({mem_id:column.id})}> Delete</a></td>
                                 </tr>
                                     )}
                                    
@@ -54,6 +69,36 @@ console.log(data);
                             </table>
                         </div>
     );
+}
+
+const Message = () =>{
+    const [open, setOpen] = useState(true);
+    
+    const closeModax = () =>{
+        setOpen(false);
+    }
+    return(
+    <div>
+        {open==true && 
+            <div id="modax">
+            <div className="modax-body">
+                <div className="modax-row modax-header">
+                    <h2>SUCCESS</h2>
+                </div>
+                <div className="modax-row modax-icon">
+                    🗑️
+                </div>
+                <div className="modax-row modax-copies">
+                    <span>Data has been deleted.</span>
+                </div>
+                <div className="modax-row">
+                    <button className="btn btn-primary" onClick={closeModax}>OKAY</button>
+                </div>
+            </div>
+        </div>
+        }
+    </div>
+    )
 }
 
 export {MemberTable};

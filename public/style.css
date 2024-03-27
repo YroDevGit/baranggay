@@ -1,0 +1,32 @@
+#modax{
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(0,0,0,0.6);
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    padding-top: 10%;
+    text-align: center;
+}
+.modax-body{
+    background-color: white;
+    border-radius: 5px;
+    padding: 20px;
+    display: inline-block;
+}
+.modax-row{
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.modax-header h2{
+    color: blue;
+}
+.modax-copies span{
+    color: gray;
+    font-size: 20px;
+}
+.modax-icon{
+    font-size: 50px;
+    color: red;
+}
