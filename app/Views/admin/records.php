@@ -4,9 +4,7 @@
 <!-- Table Start -->
 <div class="container-fluid pt-4 px-4">
                 <div class="row g-4">
-                    <?php if(session('msg')): ?>
-                    <div><?php echo session('msg') ?></div>
-                    <?php endif; ?>
+                    
                 <div class="col-sm-12 col-xl-6">
                         <div class="bg-secondary rounded h-100 p-4">
                             <h6 class="mb-4">Add member</h6>
@@ -59,6 +57,11 @@
                                 <button type="submit" class="btn btn-primary">Sign in</button>
                                </div>
                             </form>
+                            <div align='center'>
+                            <?php if(session('msg')): ?>
+                    <h2 class="text-success"><?php echo session('msg') ?></h2>
+                    <?php endif; ?>
+                            </div>
                         </div>
                     </div>
                     <div class="col-sm-12 col-xl-6" id="memberTable">

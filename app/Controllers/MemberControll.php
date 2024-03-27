@@ -35,7 +35,7 @@ class MemberControll extends BaseController
                 "stat" => 0
               ]);
             }
-            return redirect()->route("memberForm")->withInput()->with("msg","success");
+            return redirect()->route("memberForm")->withInput()->with("msg","Member added successfully");
             
         } catch (\Throwable $th) {
           echo $th;

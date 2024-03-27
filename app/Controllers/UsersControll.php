@@ -9,14 +9,15 @@ class UsersControll extends BaseController
     {
         try {
 
+            $validation = \Config\Services::validation();
         $data = [];
 
-            $rules = [
-                'username' => 'required',
-                'password' => 'required'
-            ];
-
-            if ($this->validate($rules)) {
+        $validation->setRule('username', 'Username', 'required');
+        $validation->setRule('password', 'Password', 'required');
+        
+        if (! $validation->withRequest($this->request)->run()) {
+              return redirect()->to("/")->withInput()->with("validation",$validation);
+            } else {
                 $userModel = new Users();
                 $user = $userModel->where([
                     'username' => $this->request->getPOST('username'),
@@ -29,13 +30,10 @@ class UsersControll extends BaseController
                     // built in nga set_cookie set_cookie('login', $user['id'], strtotime('+1 week')) pero nd ni mg gana kng may redirect ky conflict
                     return redirect()->to('admin/test')->setCookie('login', $user['id'], strtotime('+1 week'));
                 } else {
-                    $data['error'] = 'Invalid email or password.';
+                    return redirect('/')->withInput()->with("invalid","Account not found.!");
                 }
-             
-            } else {
-                $data['validation'] = $this->validator;
             }
-        
+             
         } catch (\Throwable $th) {
             echo $th;
         }
