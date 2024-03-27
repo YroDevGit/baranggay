@@ -1,0 +1,29 @@
+{
+  "name": "baranggay",
+  "version": "1.0.0",
+  "description": "## What is CodeIgniter?",
+  "main": "webpack.config.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --mode production",
+    "dev": "webpack --mode development"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/preset-env": "^7.24.3",
+    "css-loader": "^6.10.0",
+    "file-loader": "^6.2.0",
+    "style-loader": "^3.3.4",
+    "webpack-cli": "^5.1.4"
+  },
+  "dependencies": {
+    "axios": "^1.6.8",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
