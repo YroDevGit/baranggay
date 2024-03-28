@@ -36,15 +36,17 @@ try {
     console.error(error);
 }
 }
-
-const showSuccess = () =>{
+const hideComfirmation = () =>{
     setDel(false);
 }
 
+
+
+
     return(
         <div className="bg-secondary rounded h-100 p-4">
-            {success==true && <Message/>}
-            {del==true && <ConfirmDelete member={m_id} showData={displayMember}  success={showSuccess}/>}
+            {success==true && <Message open={isSuccess}/>}
+            {del==true && <ConfirmDelete member={m_id} showData={displayMember}  hide={hideComfirmation} success={isSuccess}/>}
                             <h6 className="mb-4 col-sm-6"><input type="search" onChange={showMembers} className="form-control" placeholder="Seach name here..." /></h6>
                             <table className="table table-striped">
                                 <thead>
@@ -75,17 +77,13 @@ const showSuccess = () =>{
 
 
 
-const Message = () =>{
-    const [open, setOpen] = useState(true);
-    
+const Message = ({open}) =>{
     const closeModax = () =>{
-        setOpen(false);
+        open(false);
     }
     return(
-    <div>
-        {open==true && 
             <div id="modax">
-            <div className="modax-body">
+            <div className="modax-body w3-animate-zoom">
                 <div className="modax-row modax-header">
                     <h2>SUCCESS</h2>
                 </div>
@@ -100,26 +98,25 @@ const Message = () =>{
                 </div>
             </div>
         </div>
-        }
-    </div>
     )
 }
 
 
 
-const ConfirmDelete = ({member, showData, success}) =>{
+const ConfirmDelete = ({member, showData, hide, success}) =>{
   
     const DelData = async() =>{
     const response = await axios.get(`/API/deleteMember?val=${member}`);
     console.log(response.data);
     showData("");
-    success();
+    hide();
+    success(true);
     }
   
     return(
  
     <div id="modax">
-    <div className="modax-body">
+    <div className="w3-animate-top modax-body">
         <div className="modax-row modax-header">
             <h2>CONFIRMATION</h2>
         </div>
@@ -133,7 +130,7 @@ const ConfirmDelete = ({member, showData, success}) =>{
            <table>
             <tbody>
             <tr>
-                <td align="left"><button className="btn btn-dark modax-btn" onClick={success}>CANCEL</button></td>
+                <td align="left"><button className="btn btn-dark modax-btn" onClick={hide}>CANCEL</button></td>
                 <td align="right"><button className="btn btn-primary modax-btn" onClick={DelData}>OKAY</button></td>
             </tr>
             </tbody>

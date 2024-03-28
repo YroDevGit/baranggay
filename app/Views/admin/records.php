@@ -43,7 +43,7 @@
                                 </div>
                                 <div class="col-md-6">
                                 <label for="exampleInputEmail1"  class="form-label">Address</label>
-                                    <input type="text" name="address" class="form-control" value="<?= old('address') ?>" id="exampleInputEmail1"
+                                    <input type="text" name="address" class="form-control" value="<?= old("address") ?>" id="exampleInputEmail1"
                                         aria-describedby="emailHelp">
                                     <div id="emailHelp" class="form-text text-danger">
                                     <?php if (session('validation')): ?>
@@ -59,7 +59,7 @@
                             </form>
                             <div align='center'>
                             <?php if(session('msg')): ?>
-                    <h2 class="text-success"><?php echo session('msg') ?></h2>
+                    <div id="recordSuccess"></div>
                     <?php endif; ?>
                             </div>
                         </div>

@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { MemberTable } from './MemberTable';
+import { Modax } from './Modax';
 
 
 
@@ -14,6 +15,15 @@ try {
   )
 } catch (error) {
   console.log(error);
+}
+
+try {
+  ReactDOM.render(
+    <Modax title={"SUCCESS"} copy={"Member added successfully"} icon={"✔️"} />,
+    document.getElementById('recordSuccess')
+  )
+} catch (error) {
+  
 }
 
 // If you want to start measuring performance in your app, pass a function

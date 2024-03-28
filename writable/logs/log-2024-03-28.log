@@ -1,0 +1,48 @@
+CRITICAL - 2024-03-28 14:42:20 --> ErrorException: Array to string conversion
+in APPPATH\Views\admin\records.php on line 46.
+ 1 APPPATH\Views\admin\records.php(46): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'C:\\Users\\ECD-TYRONE\\OneDrive\\Documents\\laravel\\collab\\baranggay\\app\\Views\\admin\\records.php', 46)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\Users\\ECD-TYRONE\\OneDrive\\Documents\\laravel\\collab\\baranggay\\app\\Views\\admin\\records.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('/admin/records', [], true)
+ 5 APPPATH\Config\Routes.php(28): view('/admin/records')
+ 6 SYSTEMPATH\CodeIgniter.php(890): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH\CodeIgniter.php(489): CodeIgniter\CodeIgniter->startController()
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\Users\\ECD-TYRONE\\OneDrive\\Documents\\laravel\\collab\\baranggay\\public\\index.php')
+CRITICAL - 2024-03-28 14:42:22 --> ErrorException: Array to string conversion
+in APPPATH\Views\admin\records.php on line 46.
+ 1 APPPATH\Views\admin\records.php(46): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'C:\\Users\\ECD-TYRONE\\OneDrive\\Documents\\laravel\\collab\\baranggay\\app\\Views\\admin\\records.php', 46)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\Users\\ECD-TYRONE\\OneDrive\\Documents\\laravel\\collab\\baranggay\\app\\Views\\admin\\records.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('/admin/records', [], true)
+ 5 APPPATH\Config\Routes.php(28): view('/admin/records')
+ 6 SYSTEMPATH\CodeIgniter.php(890): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH\CodeIgniter.php(489): CodeIgniter\CodeIgniter->startController()
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\Users\\ECD-TYRONE\\OneDrive\\Documents\\laravel\\collab\\baranggay\\public\\index.php')
+CRITICAL - 2024-03-28 14:42:45 --> ErrorException: Array to string conversion
+in APPPATH\Views\admin\records.php on line 46.
+ 1 APPPATH\Views\admin\records.php(46): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'C:\\Users\\ECD-TYRONE\\OneDrive\\Documents\\laravel\\collab\\baranggay\\app\\Views\\admin\\records.php', 46)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\Users\\ECD-TYRONE\\OneDrive\\Documents\\laravel\\collab\\baranggay\\app\\Views\\admin\\records.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('/admin/records', [], true)
+ 5 APPPATH\Config\Routes.php(28): view('/admin/records')
+ 6 SYSTEMPATH\CodeIgniter.php(890): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH\CodeIgniter.php(489): CodeIgniter\CodeIgniter->startController()
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\Users\\ECD-TYRONE\\OneDrive\\Documents\\laravel\\collab\\baranggay\\public\\index.php')
+CRITICAL - 2024-03-28 14:43:00 --> ErrorException: Array to string conversion
+in APPPATH\Views\admin\records.php on line 46.
+ 1 APPPATH\Views\admin\records.php(46): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'C:\\Users\\ECD-TYRONE\\OneDrive\\Documents\\laravel\\collab\\baranggay\\app\\Views\\admin\\records.php', 46)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\Users\\ECD-TYRONE\\OneDrive\\Documents\\laravel\\collab\\baranggay\\app\\Views\\admin\\records.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('/admin/records', [], true)
+ 5 APPPATH\Config\Routes.php(28): view('/admin/records')
+ 6 SYSTEMPATH\CodeIgniter.php(890): CodeIgniter\Router\RouteCollection->{closure}()
+ 7 SYSTEMPATH\CodeIgniter.php(489): CodeIgniter\CodeIgniter->startController()
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\Users\\ECD-TYRONE\\OneDrive\\Documents\\laravel\\collab\\baranggay\\public\\index.php')
