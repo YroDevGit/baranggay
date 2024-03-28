@@ -25,7 +25,6 @@ class MemberControll extends BaseController
             if (! $validation->withRequest($this->request)->run()) {
               return redirect()->to("admin/test")->withInput()->with("validation",$validation);
             } else {
-              session()->remove('_ci_old_input');
               $member = $this->MEMBERS();
               $member->insert([
                 "fullname" => $this->request->getPost("fullname"),
