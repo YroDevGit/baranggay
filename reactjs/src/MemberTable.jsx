@@ -3,6 +3,8 @@ import React,{useState, useEffect} from "react";
 
 const MemberTable = () =>{
 const [data, setData] = useState([]);
+const [del, setDel] = useState(false);
+const [m_id, set_mid] = useState(0);
 const [success, isSuccess] = useState(false);
 
 useEffect(()=>{
@@ -25,24 +27,24 @@ const displayMember = async(searchValue) =>{
         }
 }
 
+
 const toDelete = async({mem_id}) =>{
 try {
-    const response = await axios.get(`/API/deleteMember?val=${mem_id}`);
-    console.log(response.data);
-    isSuccess(true);
-    displayMember("");
+    set_mid(mem_id);
+    setDel(true);  
 } catch (error) {
-    
+    console.error(error);
 }
 }
 
+const showSuccess = () =>{
+    setDel(false);
+}
 
-
-
-console.log(data);
     return(
         <div className="bg-secondary rounded h-100 p-4">
             {success==true && <Message/>}
+            {del==true && <ConfirmDelete member={m_id} showData={displayMember}  success={showSuccess}/>}
                             <h6 className="mb-4 col-sm-6"><input type="search" onChange={showMembers} className="form-control" placeholder="Seach name here..." /></h6>
                             <table className="table table-striped">
                                 <thead>
@@ -70,6 +72,8 @@ console.log(data);
                         </div>
     );
 }
+
+
 
 const Message = () =>{
     const [open, setOpen] = useState(true);
@@ -100,5 +104,48 @@ const Message = () =>{
     </div>
     )
 }
+
+
+
+const ConfirmDelete = ({member, showData, success}) =>{
+  
+    const DelData = async() =>{
+    const response = await axios.get(`/API/deleteMember?val=${member}`);
+    console.log(response.data);
+    showData("");
+    success();
+    }
+  
+    return(
+ 
+    <div id="modax">
+    <div className="modax-body">
+        <div className="modax-row modax-header">
+            <h2>CONFIRMATION</h2>
+        </div>
+        <div className="modax-row modax-icon">
+            ❓
+        </div>
+        <div className="modax-row modax-copies">
+            <span>Are you sure to delete this data?</span>
+        </div>
+        <div className="modax-row">
+           <table>
+            <tbody>
+            <tr>
+                <td align="left"><button className="btn btn-dark modax-btn" onClick={success}>CANCEL</button></td>
+                <td align="right"><button className="btn btn-primary modax-btn" onClick={DelData}>OKAY</button></td>
+            </tr>
+            </tbody>
+           </table>
+        </div>
+    </div>
+</div>
+
+    )
+};
+
+
+
 
 export {MemberTable};
