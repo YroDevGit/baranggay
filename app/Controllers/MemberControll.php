@@ -26,6 +26,7 @@ class MemberControll extends BaseController
               return redirect()->to("admin/test")->withInput()->with("validation",$validation);
             } else {
               $member = $this->MEMBERS();
+              
               $member->insert([
                 "fullname" => $this->request->getPost("fullname"),
                 "contact" => $this->request->getPost("contact"),
@@ -34,7 +35,7 @@ class MemberControll extends BaseController
                 "stat" => 0
               ]);
             }
-            return redirect()->route("memberForm")->withInput()->with("msg","Member added successfully");
+            return redirect()->route("memberForm")->with("msg","Member added successfully");
             
         } catch (\Throwable $th) {
           echo $th;
