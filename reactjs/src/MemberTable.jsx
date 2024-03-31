@@ -44,7 +44,7 @@ const hideComfirmation = () =>{
 
 
     return(
-        <div className="bg-secondary rounded h-100 p-4">
+        <div className="bg-secondary rounded h-100 p-4 scroller">
             {success==true && <Message open={isSuccess}/>}
             {del==true && <ConfirmDelete member={m_id} showData={displayMember}  hide={hideComfirmation} success={isSuccess}/>}
                             <h6 className="mb-4 col-sm-6"><input type="search" onChange={showMembers} className="form-control" placeholder="Seach name here..." /></h6>

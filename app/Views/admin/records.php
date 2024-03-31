@@ -5,7 +5,7 @@
 <div class="container-fluid pt-4 px-4">
                 <div class="row g-4">
                     
-                <div class="col-sm-12 col-xl-6">
+                <div class="col-sm-12 col-xl-4">
                         <div class="bg-secondary rounded h-100 p-4">
                             <h6 class="mb-4">Add member</h6>
                             <form method="post" action="/admin/addMember">
@@ -64,7 +64,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-12 col-xl-6" id="memberTable">
+                    <div class="col-sm-12 col-xl-8" id="memberTable">
                         
                     </div>
                 </div>
