@@ -63,8 +63,8 @@ const hideComfirmation = () =>{
                                     <tr>
                                     <th scope="row">{column.id}</th>
                                     <td>{column.fullname}</td>
-                                    <td>{column.contact}</td>
-                                    <td>{column.email}</td>
+                                    <td><a className="text-success" href={"tel:"+column.contact}>{column.contact}</a></td>
+                                    <td><a className="text-success" href={"mailto:"+column.email}>{column.email}</a></td>
                                     <td><a className="btn btn-sm btn-primary" onClick={()=> toDelete({mem_id:column.id})}> Delete</a></td>
                                 </tr>
                                     )}

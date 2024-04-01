@@ -51,7 +51,6 @@ if(get_cookie("login")){
 $routes->post("login", "UsersControll::login");
 
 $routes->get('/', function () {
-    
     try {
         
         if (get_cookie('login')) {
